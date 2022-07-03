@@ -133,18 +133,18 @@ class SqlQueries:
                 AND events.length = songs.duration
     """)
 
-    user_table_insert = ("""
+    users_table_insert = ("""
         SELECT distinct userid, firstname, lastname, gender, level
         FROM staging_events
         WHERE page='NextSong'
     """)
 
-    song_table_insert = ("""
+    songs_table_insert = ("""
         SELECT distinct song_id, title, artist_id, year, duration
         FROM staging_songs
     """)
 
-    artist_table_insert = ("""
+    artists_table_insert = ("""
         SELECT distinct artist_id, artist_name, artist_location, artist_latitude, artist_longitude
         FROM staging_songs
     """)
